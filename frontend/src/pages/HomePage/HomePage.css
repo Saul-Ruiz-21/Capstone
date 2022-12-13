@@ -71,3 +71,17 @@
     text-align: center;
 }
 
+.Packages {
+    position: absolute;
+    height: 200px;
+    display: flex;
+    left: 25%;
+    top: 260%;
+}
+
+.Packages h3 {
+    margin: 40px;
+    margin-right: 110px;
+    display: flex;
+    text-align: center;
+}

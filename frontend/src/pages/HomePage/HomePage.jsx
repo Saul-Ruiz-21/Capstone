@@ -38,9 +38,15 @@ const HomePage = (props) => {
             </div>
 
             <div className="Packages">
-              <h3>Small Dog Package</h3>
-              <h3>Medium Dog Package</h3>
-              <h3>Large Dog Package</h3>
+              <h3>Small Dog Package <br /> $20.99 </h3>
+              <h3>Medium Dog Package <br /> $35.99 </h3>
+              <h3>Large Dog Package <br /> $50.99 </h3>
+            </div>
+
+            <div className="Prices">
+              
+              <h2></h2>
+              <h2></h2>
             </div>
 
           </div>
