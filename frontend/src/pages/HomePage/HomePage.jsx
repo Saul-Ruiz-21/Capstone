@@ -1,16 +1,25 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import './HomePage.css'
+import Buttons from "../../components/Buttons/Buttons";
+import TakeSurvey from "../../components/TakeSurvey/TakeSurvey";
 
 const HomePage = (props) => {
+  const [items, setItems] = useState([])
 
+  async function getProducts(){
+    let response = await axios.get(`http://127.0.0.1:8000/api/product/`)
+    console.log(response)
+    setItems(response.data)
+}
 
+  useEffect(() => {
+    getProducts();
+  }, [])
 
   return (
     <div>
-        <button className="SurveyButton">Take Survey</button>
         <img className="tdog" src='https://images.unsplash.com/photo-1501693121490-de6de2016976?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80' alt="" />
         <h1 className="inImj">Enjoy treats and toys <br /> Every Month. </h1>
         <body>
@@ -43,14 +52,13 @@ const HomePage = (props) => {
               <h3>Large Dog Package <br /> $50.99 </h3>
             </div>
 
-            <div className="Prices">
-              
-              <h2></h2>
-              <h2></h2>
+            <div>
+              <Buttons items={items} />
             </div>
-
           </div>
         </body>
+
+        <TakeSurvey />
     </div>
   )
 };
