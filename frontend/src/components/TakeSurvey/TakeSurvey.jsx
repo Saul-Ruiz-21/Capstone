@@ -14,10 +14,15 @@ const TakeSurvey = (props) => {
     let smallDog = 'We Recommend The Small Dog Package!!'
     let mediumDog = 'We Recommend The Medium Dog Package!!'
     let largeDog = 'We Recommend The Large Dog Package!!'
+    let incompleteSurvey = 'PLEASE TAKE SURVEY FIRST'
 
     const toggleModal = () => {
         setSurveyModal(!surveyModal)
-
+        setLowWeights('')
+        setHighWeights('')
+        setAge('')
+        setTeethInput('')
+        setResult(incompleteSurvey)
     }
 
     const toggleResultModal = () => {

@@ -4,19 +4,11 @@ import axios from "axios";
 import './HomePage.css'
 import Buttons from "../../components/Buttons/Buttons";
 import TakeSurvey from "../../components/TakeSurvey/TakeSurvey";
+import ItemContainer from "../../components/ItemContainer/ItemContainer";
+import { Link } from "react-router-dom";
 
 const HomePage = (props) => {
-  const [items, setItems] = useState([])
 
-  async function getProducts(){
-    let response = await axios.get(`http://127.0.0.1:8000/api/product/`)
-    console.log(response)
-    setItems(response.data)
-}
-
-  useEffect(() => {
-    getProducts();
-  }, [])
 
   return (
     <div>
@@ -40,25 +32,30 @@ const HomePage = (props) => {
 
         <body>
           <div className="endContent">
-            <div className="boxes">
-              <img src="https://images.unsplash.com/photo-1656543802898-41c8c46683a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="" />
-              <img src="https://images.unsplash.com/photo-1656543802898-41c8c46683a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="" />
-              <img src="https://images.unsplash.com/photo-1656543802898-41c8c46683a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="" />
+            <div className="boxes-home">
+              <Link to='/cart'>
+                <img src="https://images.unsplash.com/photo-1656543802898-41c8c46683a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="" />
+                <img src="https://images.unsplash.com/photo-1656543802898-41c8c46683a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="" />
+                <img src="https://images.unsplash.com/photo-1656543802898-41c8c46683a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="" />
+              </Link>
+              
             </div>
 
             <div className="Packages">
-              <h3>Small Dog Package <br /> $20.99 </h3>
-              <h3>Medium Dog Package <br /> $35.99 </h3>
-              <h3>Large Dog Package <br /> $50.99 </h3>
-            </div>
-
-            <div>
-              <Buttons items={items} />
+              <Link to='/cart'>
+                <h3>Small Dog Package <br /> $20.99 </h3>
+                <h3>Medium Dog Package <br /> $35.99 </h3>
+                <h3>Large Dog Package <br /> $50.99 </h3>
+              </Link>
+              
             </div>
           </div>
-        </body>
-
+        </body> 
+        <div>
+          <h2 className="bottom-page">KChews</h2>
+        </div>
         <TakeSurvey />
+        <Buttons /> 
     </div>
   )
 };

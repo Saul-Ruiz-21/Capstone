@@ -1,0 +1,17 @@
+.empty-cart {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 72%;
+}
+
+.container-cart {
+    position: absolute;
+    top: 65%;
+    right: 50%;
+}
+
+.row1 {
+    justify-content: center;
+    
+}
